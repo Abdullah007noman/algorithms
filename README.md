@@ -78,6 +78,13 @@ The graph is represented as follows:
 - Each node is a clothing item (undershorts, pants, shirt, etc.)
 - Directed edges show connections between items
 - Each node has an associated fraction value (e.g., undershorts: 11/16)
+  
+## Implementation Details
+The DFS algorithm is implemented using recursion with the following components:
+1. Graph representation using an adjacency list
+2. Visited node tracking to prevent cycles
+3. Traversal order recording
+4. Complete graph coverage handling
 
 ### Example Output
 ```
@@ -119,13 +126,6 @@ Complete traversal order:
 8. tie (2/5)
 9. watch (9/10)
 ```
-
-## Implementation Details
-The DFS algorithm is implemented using recursion with the following components:
-1. Graph representation using an adjacency list
-2. Visited node tracking to prevent cycles
-3. Traversal order recording
-4. Complete graph coverage handling
 
 ## Graph Representation
 The clothing graph is defined with the following adjacency list:
