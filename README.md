@@ -9,7 +9,7 @@ This repository contains implementation of different algorithms:
 3. Kruskal algorithm
 
 
-# Topological Sort Algorithm Implementation (Page 613 ,fig-2,Cormen 3rd edition)
+# Topological Sort Algorithm Implementation (Page 613 ,fig-22.7 (a),Cormen 3rd edition)
 
 This repository contains an implementation of Kahn's algorithm for topological sorting, demonstrated with a clothing dependency graph.
 Topological sorting is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. This algorithm is particularly useful for scheduling tasks with dependencies, course prerequisites, or determining the order to put on clothing items.
@@ -69,7 +69,7 @@ print(sorted_order)
 - ✅ Provides a valid topological ordering when possible
 - ✅ Clear, commented implementation for educational purposes
 
-# DFS Implementation (Page 613 ,fig-1,Cormen 3rd edition)
+# DFS Implementation (Page 613 ,fig-22.7 (b),Cormen 3rd edition)
 
 This repository contains a Python implementation of the Depth-First Search (DFS) algorithm applied to a directed graph of clothing items. The graph represents dependencies or relationships between different clothing items, with each node having associated fraction values.
 
@@ -152,8 +152,140 @@ graph = {
 - ✅ Includes fraction values for each clothing item node
 
 
+# Kruskal's Algorithm for Minimum Spanning Tree (Page 625 ,fig-23.1,Cormen 3rd edition)
+
+This repository contains an implementation of Kruskal's algorithm for finding the Minimum Spanning Tree (MST) of an undirected, weighted graph. The implementation includes detailed debugging output, verification steps, and visualization capabilities.
 
 
+A **Minimum Spanning Tree (MST)** is a subset of edges from a connected, undirected, weighted graph that connects all vertices with the minimum possible total edge weight, without forming any cycles. Kruskal's algorithm is one of the most efficient methods for finding MSTs.
+
+
+Kruskal's algorithm works by:
+1. Sorting all edges in non-decreasing order of their weight
+2. Keeping a set of edges in the MST, initially empty
+3. Iterating through the sorted edges and adding an edge to the MST if it doesn't form a cycle
+4. Using a disjoint-set data structure (Union-Find) to efficiently detect cycles
+
+The algorithm follows a greedy approach and guarantees an optimal solution.
+
+
+## Usage
+
+```python
+from kruskal import kruskal, visualize_graph
+
+# Define your graph
+vertices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+edges = [
+    ('a', 'b', 4), ('a', 'h', 8),
+    ('b', 'h', 11), ('b', 'c', 8),
+    ('c', 'd', 7), ('c', 'i', 2),
+    ('c', 'f', 4), ('d', 'e', 9),
+    ('d', 'f', 14), ('e', 'f', 10),
+    ('f', 'g', 2), ('g', 'h', 1),
+    ('g', 'i', 6), ('h', 'i', 7)
+]
+
+# Run the algorithm with debugging information
+mst, total_weight = kruskal(vertices, edges, debug=True)
+
+# Visualize the result
+visualize_graph(vertices, edges, mst)
+
+# Find a path between vertices
+path = find_path(mst, 'a', 'e')
+if path:
+    print(f"Path from 'a' to 'e': {' -> '.join(path)}")
+```
+
+## Example Output
+
+When running the algorithm on the test graph:
+
+```
+Running Kruskal's algorithm with detailed debugging...
+
+Sorted edges:
+1. (g, h): 1
+2. (c, i): 2
+3. (f, g): 2
+4. (a, b): 4
+5. (c, f): 4
+6. (g, i): 6
+7. (c, d): 7
+8. (h, i): 7
+9. (a, h): 8
+10. (b, c): 8
+11. (d, e): 9
+12. (e, f): 10
+13. (b, h): 11
+14. (d, f): 14
+
+Execution of Kruskal's algorithm:
+Added edge #1: (g, h) with weight 1
+Current MST weight: 1
+Added edge #2: (c, i) with weight 2
+Current MST weight: 3
+Added edge #3: (f, g) with weight 2
+Current MST weight: 5
+Added edge #4: (a, b) with weight 4
+Current MST weight: 9
+Added edge #5: (c, f) with weight 4
+Current MST weight: 13
+Skipped edge #6: (g, i) - would create a cycle
+Added edge #7: (c, d) with weight 7
+Current MST weight: 20
+Skipped edge #8: (h, i) - would create a cycle
+Added edge #9: (a, h) with weight 8
+Current MST weight: 28
+Skipped edge #10: (b, c) - would create a cycle
+Added edge #11: (d, e) with weight 9
+Current MST weight: 37
+MST is complete with V-1 edges
+
+MST verification passed: it is connected and acyclic
+
+Edges in the Minimum Spanning Tree (sorted by weight and node names):
+g - h: 1
+c - i: 2
+f - g: 2
+a - b: 4
+c - f: 4
+c - d: 7
+a - h: 8
+d - e: 9
+
+Total weight of MST: 37
+
+Path from 'a' to 'e' in MST: a -> h -> g -> f -> c -> d -> e
+Total weight of path: 31
+```
+
+## Visualization
+
+The visualization shows both the original graph and the MST:
+
+- Gray edges represent the original graph
+- Red edges represent the edges in the MST
+- Edge labels show the weights
+
+## Complexity Analysis
+
+- **Time Complexity**: O(E log E) where E is the number of edges in the graph
+  - Sorting edges takes O(E log E)
+  - Union-Find operations take nearly constant time with path compression and union by rank
+- **Space Complexity**: O(V + E) where V is the number of vertices and E is the number of edges
+
+
+## Features
+
+This implementation includes:
+
+- ✅ Uses path compression and union by rank optimizations for near-constant time operations
+- ✅ Shows the execution of the algorithm step by step
+- ✅ Confirms that the resulting MST is connected and acyclic
+- ✅ Finds paths between vertices in the MST
+- ✅ Creates a graphical representation of the original graph and the MST
 
 
 
