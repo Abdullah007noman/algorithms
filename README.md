@@ -152,7 +152,7 @@ graph = {
 - ✅ Includes fraction values for each clothing item node
 
 
-# Kruskal's Algorithm for Minimum Spanning Tree (Page 625 ,fig-23.1,Cormen 3rd edition)
+# Kruskal's Algorithm (Page 625 ,fig-23.1,Cormen 3rd edition)
 
 This repository contains an implementation of Kruskal's algorithm for finding the Minimum Spanning Tree (MST) of an undirected, weighted graph. The implementation includes detailed debugging output, verification steps, and visualization capabilities.
 
