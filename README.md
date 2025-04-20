@@ -69,3 +69,94 @@ print(sorted_order)
 - ✅ Provides a valid topological ordering when possible
 - ✅ Clear, commented implementation for educational purposes
 
+# DFS Implementation (Page 613 ,fig-1,Cormen 3rd edition)
+
+This repository contains a Python implementation of the Depth-First Search (DFS) algorithm applied to a directed graph of clothing items. The graph represents dependencies or relationships between different clothing items, with each node having associated fraction values.
+
+## Graph Structure
+The graph is represented as follows:
+- Each node is a clothing item (undershorts, pants, shirt, etc.)
+- Directed edges show connections between items
+- Each node has an associated fraction value (e.g., undershorts: 11/16)
+
+
+## Features
+- Implementation of classic Depth-First Search algorithm
+- Complete traversal of potentially disconnected graph components
+- Tracks and reports visited nodes in order
+- Handles the specific clothing item graph shown in the project
+- Includes fraction values for each clothing item node
+
+## Usage
+Run the script directly with Python:
+
+```bash
+python dfs_implementation.py
+```
+
+### Example Output
+```
+Starting DFS traversal of the clothing graph:
+Visiting: undershorts (11/16)
+Visiting: pants (12/15)
+Visiting: belt (6/7)
+Visiting: jacket (3/4)
+Visiting: shoes (13/14)
+
+Full DFS traversal order:
+1. undershorts (11/16)
+2. pants (12/15)
+3. belt (6/7)
+4. jacket (3/4)
+5. shoes (13/14)
+
+Checking for unvisited nodes:
+Some nodes were not visited: watch, socks, tie, shirt
+Running DFS from the remaining nodes:
+Visiting: undershorts (11/16)
+Visiting: pants (12/15)
+Visiting: belt (6/7)
+Visiting: jacket (3/4)
+Visiting: shoes (13/14)
+Visiting: socks (17/18)
+Visiting: shirt (1/8)
+Visiting: tie (2/5)
+Visiting: watch (9/10)
+
+Complete traversal order:
+1. undershorts (11/16)
+2. pants (12/15)
+3. belt (6/7)
+4. jacket (3/4)
+5. shoes (13/14)
+6. socks (17/18)
+7. shirt (1/8)
+8. tie (2/5)
+9. watch (9/10)
+```
+
+## Implementation Details
+The DFS algorithm is implemented using recursion with the following components:
+1. Graph representation using an adjacency list
+2. Visited node tracking to prevent cycles
+3. Traversal order recording
+4. Complete graph coverage handling
+
+## Graph Representation
+The clothing graph is defined with the following adjacency list:
+```python
+graph = {
+    'undershorts': ['pants', 'shoes'],
+    'pants': ['belt', 'shoes'],
+    'belt': ['jacket'],
+    'shirt': ['belt', 'tie'],
+    'tie': ['jacket'],
+    'socks': ['shoes'],
+    'shoes': [],
+    'watch': [],
+    'jacket': []
+}
+```
+
+
+
