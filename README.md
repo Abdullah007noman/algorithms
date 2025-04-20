@@ -87,13 +87,6 @@ The graph is represented as follows:
 - Handles the specific clothing item graph shown in the project
 - Includes fraction values for each clothing item node
 
-## Usage
-Run the script directly with Python:
-
-```bash
-python dfs_implementation.py
-```
-
 ### Example Output
 ```
 Starting DFS traversal of the clothing graph:
