@@ -9,7 +9,7 @@ This repository contains implementation of different algorithms:
 3. Kruskal algorithm
 
 
-# Topological Sort Algorithm Implementation
+# Topological Sort Algorithm Implementation (Page 613 ,fig-2,Cormen 3rd edition)
 
 This repository contains an implementation of Kahn's algorithm for topological sorting, demonstrated with a clothing dependency graph.
 Topological sorting is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. This algorithm is particularly useful for scheduling tasks with dependencies, course prerequisites, or determining the order to put on clothing items.
