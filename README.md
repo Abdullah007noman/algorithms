@@ -79,14 +79,6 @@ The graph is represented as follows:
 - Directed edges show connections between items
 - Each node has an associated fraction value (e.g., undershorts: 11/16)
 
-
-## Features
-- Implementation of classic Depth-First Search algorithm
-- Complete traversal of potentially disconnected graph components
-- Tracks and reports visited nodes in order
-- Handles the specific clothing item graph shown in the project
-- Includes fraction values for each clothing item node
-
 ### Example Output
 ```
 Starting DFS traversal of the clothing graph:
@@ -150,6 +142,19 @@ graph = {
     'jacket': []
 }
 ```
+
+## Features
+
+- ✅ Implementation of classic Depth-First Search algorithm
+- ✅ Complete traversal of potentially disconnected graph components
+- ✅ Tracks and reports visited nodes in order
+- ✅ Handles the specific clothing item graph shown in the project
+- ✅ Includes fraction values for each clothing item node
+
+
+
+
+
 
 
 
