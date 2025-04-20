@@ -1,4 +1,14 @@
-# algorithms
+# Algorithms
+
+This repository contains implementation of different algorithms:
+
+1. Topological sort
+
+2. Depth-First Search
+
+3. Kruskal algorithm
+
+
 # Topological Sort Algorithm Implementation
 
 This repository contains an implementation of Kahn's algorithm for topological sorting, demonstrated with a clothing dependency graph.
