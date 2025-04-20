@@ -2,9 +2,6 @@
 # Topological Sort Algorithm Implementation
 
 This repository contains an implementation of Kahn's algorithm for topological sorting, demonstrated with a clothing dependency graph.
-
-## Overview
-
 Topological sorting is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. This algorithm is particularly useful for scheduling tasks with dependencies, course prerequisites, or determining the order to put on clothing items.
 
 ## Algorithm: Kahn's Topological Sort
